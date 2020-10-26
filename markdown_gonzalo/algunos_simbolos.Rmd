@@ -2,7 +2,9 @@
 title: "simbolos"
 author: "gonzalo"
 date: "21/10/2020"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 #Estos son los simbolos 
@@ -31,3 +33,19 @@ $$\begin{bmatrix} a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} & a
 #Si la quiero rodear de un parentexis le coloco {pmatrix} si la quiero dividir con una barra con {vmatrix} si la quiero dividir con un corchete {bmatrix} si la quiero con llaves con {Bmatrix}
 
 $$\begin{Bmatrix} a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} &a_{32} & a_{33} \end {Bmatrix}$$
+# nuestro propio chunks
+vamos a calcular $\sqrt{2}-e^{-2}$:
+
+```{r miprimerchunk,echo=TRUE,eval=FALSE}
+sqrt(2)-exp(-2)
+
+```
+
+# Si le colamos falso no muestra el mensaje que se esta cargando la libreria  
+```{r magic, message=TRUE}
+library(magic)
+magic(6)
+
+```
+
+
