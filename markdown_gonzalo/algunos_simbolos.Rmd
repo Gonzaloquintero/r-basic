@@ -1,0 +1,98 @@
+---
+title: "simbolos"
+author: "gonzalo"
+date: "21/10/2020"
+output:
+  html_document:
+    df_print: paged
+---
+
+#Estos son los simbolos 
+ 
+ $$  
+{\frac{1}{3}\times\sqrt[3][9]}
+\div{2^3}
+$$
+Hacemos el ejercicio anterior pero en `R`
+
+- echo = Para mostrar el codigo fuente
+
+- eval= Para evaluar el codigo para que muestre los resultados
+
+- message= Mensaje al ejecutar el codigo si cargo librerias 
+
+- warning= Mensajes de advertencia 
+
+- comment= NA  Evita que salgan los ##
+
+- results markup = muestra los resultados documento final
+
+- results hide=  no muetra el resultado en el documento final
+
+- results asis= devuelve los resultados linea a linea 
+
+- results hold= Muestra los resultados al final del bloque
+
+
+```{r, ecuacion,echo=TRUE,eval=TRUE,results='markup',comment=NA}
+{1/3 * 9^(1/3)}/2^3
+
+```
+
+
+simbolos en un parrafo $\frac{a}{b}$ o si se quiere tamaño real $\dfrac{a}{b}$
+
+Para que los delimitadores adopten la altura de la expresion $(\dfrac{a}{b})$ y $\left(\dfrac{a}{b}\right)$
+
+# Matrices
+$$\begin{bmatrix} a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33}\end {bmatrix}$$
+
+Si la quiero rodear de un parentexis le coloco {pmatrix} si la quiero dividir con una barra con {vmatrix} si la quiero dividir con un corchete {bmatrix} si la quiero con llaves con {Bmatrix}
+
+$$\begin{Bmatrix} a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} &a_{32} & a_{33} \end {Bmatrix}$$
+# nuestro propio chunks
+vamos a calcular $\sqrt{2}-e^{-2}$:
+
+```{r miprimerchunk,echo=TRUE,eval=FALSE}
+sqrt(2)-exp(-2)
+
+```
+
+ Si le colamos falso no muestra el mensaje que se esta cargando la libreria  
+```{r magic, message=TRUE}
+library(magic)
+magic(6)
+
+```
+# Vamos a trabjar con los chunk en modo linea 
+L a raiz cuadrada de 64  es=  `r sqrt(64) `  5 elevado a la  potencia 3 es igual= `r 5^3 `
+
+Cuando queremos hacer la raiz cuadrada de dos:
+
+- En $\latex$: $\sqrt{2}$
+
+- En `R` haciendo `r sqrt(2)`
+
+- La frase completa: $\sqrt{2}=$ `r sqrt(2)`
+
+El numero $\pi$ empieza por `r pi`.
+
+La Raiz quinta de 32 es `r 32^(1/5)` ó lo que viene siendo lo mismo,
+
+$\sqrt[5]{64}=$ `r 32^(1/5)`.
+
+
+#Cuando quiero hacer un codigo que no se muestre, pero sacar datos de ellos lo hago de la siquiente manera
+
+```{r prueba, results='hide', echo=FALSE}
+notas = c(3,5,7,7,9,10,4,7,9)
+media= mean(notas)
+n= length(notas)
+desv.tip = sd(notas)
+```
+Este año he realizado $n=$ `r n` examenes, con una media de $\overline{x}=$ `r round(media,2)`y una desviacion tipica de $s=$ `r round(desv.tip,2)`.
+
+
+Para que no quede con tanto decimales puede redondear a dos cifrar con round
+
+

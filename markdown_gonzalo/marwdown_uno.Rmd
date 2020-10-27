@@ -12,6 +12,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown
+Este es un archivo mio
+
+$$Gonzalo$$
 
 Esta es una formula en latex
 
