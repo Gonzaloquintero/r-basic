@@ -1,8 +1,10 @@
 ---
-title: "prueba_uno_mardown"
+title: "markdown_uno"
 author: "gonzalo"
-date: "19/10/2020"
-output: pdf_document
+date: "20/10/2020"
+output: 
+  pdf_document: 
+    keep_tex: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -10,6 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown
+
+Esta es una formula en latex
+
+$$\int_0$$
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
