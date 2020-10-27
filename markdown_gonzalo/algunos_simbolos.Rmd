@@ -47,5 +47,35 @@ library(magic)
 magic(6)
 
 ```
+# Vamos a trabjar con los chunk en modo linea 
+L a raiz cuadrada de 64  es=  `r sqrt(64) `  5 elevado a la  potencia 3 es igual= `r 5^3 `
+
+Cuando queremos hacer la raiz cuadrada de dos:
+
+- En $\latex$: $\sqrt{2}$
+
+- En `R` haciendo `r sqrt(2)`
+
+- La frase completa: $\sqrt{2}=$ `r sqrt(2)`
+
+El numero $\pi$ empieza por `r pi`.
+
+La Raiz quinta de 32 es `r 32^(1/5)` ó lo que viene siendo lo mismo,
+
+$\sqrt[5]{64}=$ `r 32^(1/5)`.
+
+
+#Cuando quiero hacer un codigo que no se muestre, pero sacar datos de ellos lo hago de la siquiente manera
+
+```{r prueba, results='hide', echo=FALSE}
+notas = c(3,5,7,7,9,10,4,7,9)
+media= mean(notas)
+n= length(notas)
+desv.tip = sd(notas)
+```
+Este año he realizado $n=$ `r n` examenes, con una media de $\overline{x}=$ `r round(media,2)`y una desviacion tipica de $s=$ `r round(desv.tip,2)`.
+
+
+Para que no quede con tanto decimales puede redondear a dos cifrar con round
 
 
