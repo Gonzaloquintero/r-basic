@@ -13,24 +13,41 @@ output:
 {\frac{1}{3}\times\sqrt[3][9]}
 \div{2^3}
 $$
-```{r}
-juan=10
-diego=5
-total= juan*diego
-print(total)
+Hacemos el ejercicio anterior pero en `R`
+
+- echo = Para mostrar el codigo fuente
+
+- eval= Para evaluar el codigo para que muestre los resultados
+
+- message= Mensaje al ejecutar el codigo si cargo librerias 
+
+- warning= Mensajes de advertencia 
+
+- comment= NA  Evita que salgan los ##
+
+- results markup = muestra los resultados documento final
+
+- results hide=  no muetra el resultado en el documento final
+
+- results asis= devuelve los resultados linea a linea 
+
+- results hold= Muestra los resultados al final del bloque
+
+
+```{r, ecuacion,echo=TRUE,eval=TRUE,results='markup',comment=NA}
+{1/3 * 9^(1/3)}/2^3
 
 ```
 
-#En el anterior ejercicio podemos observar el valor de la variables juan por la variable diego
 
-#simbolos en un parrafo $\frac{a}{b}$ o si se quiere tamaño real $\dfrac{a}{b}$
+simbolos en un parrafo $\frac{a}{b}$ o si se quiere tamaño real $\dfrac{a}{b}$
 
-# Para que los delimitadores adopten la altura de la expresion $(\dfrac{a}{b})$ y $\left(\dfrac{a}{b}\right)$
+Para que los delimitadores adopten la altura de la expresion $(\dfrac{a}{b})$ y $\left(\dfrac{a}{b}\right)$
 
 # Matrices
 $$\begin{bmatrix} a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33}\end {bmatrix}$$
 
-#Si la quiero rodear de un parentexis le coloco {pmatrix} si la quiero dividir con una barra con {vmatrix} si la quiero dividir con un corchete {bmatrix} si la quiero con llaves con {Bmatrix}
+Si la quiero rodear de un parentexis le coloco {pmatrix} si la quiero dividir con una barra con {vmatrix} si la quiero dividir con un corchete {bmatrix} si la quiero con llaves con {Bmatrix}
 
 $$\begin{Bmatrix} a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} &a_{32} & a_{33} \end {Bmatrix}$$
 # nuestro propio chunks
@@ -41,7 +58,7 @@ sqrt(2)-exp(-2)
 
 ```
 
-# Si le colamos falso no muestra el mensaje que se esta cargando la libreria  
+ Si le colamos falso no muestra el mensaje que se esta cargando la libreria  
 ```{r magic, message=TRUE}
 library(magic)
 magic(6)

@@ -1480,15 +1480,6 @@ window.onload = function() {
 };
 </script>
 
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-      </style>
-
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -1653,26 +1644,29 @@ summary {
 <p><span class="math display">\[  
 {\frac{1}{3}\times\sqrt[3][9]}
 \div{2^3}
-\]</span></p>
-<pre class="r"><code>juan=10
-diego=5
-total= juan*diego
-print(total)</code></pre>
-<pre><code>## [1] 50</code></pre>
-<p>#En el anterior ejercicio podemos observar el valor de la variables juan por la variable diego</p>
-<p>#simbolos en un parrafo <span class="math inline">\(\frac{a}{b}\)</span> o si se quiere tamaño real <span class="math inline">\(\dfrac{a}{b}\)</span></p>
-<div id="para-que-los-delimitadores-adopten-la-altura-de-la-expresion-dfracab-y-leftdfracabright" class="section level1">
-<h1>Para que los delimitadores adopten la altura de la expresion <span class="math inline">\((\dfrac{a}{b})\)</span> y <span class="math inline">\(\left(\dfrac{a}{b}\right)\)</span></h1>
-</div>
+\]</span> Hacemos el ejercicio anterior pero en <code>R</code></p>
+<ul>
+<li><p>echo = Para mostrar el codigo fuente</p></li>
+<li><p>eval= Para evaluar el codigo para que muestre los resultados</p></li>
+<li><p>message= Mensaje al ejecutar el codigo si cargo librerias</p></li>
+<li><p>warning= Mensajes de advertencia</p></li>
+<li><p>comment= NA Evita que salgan los ##</p></li>
+<li><p>results markup = muestra los resultados documento final</p></li>
+<li><p>results hide= no muetra el resultado en el documento final</p></li>
+<li><p>results asis= devuelve los resultados linea a linea</p></li>
+<li><p>results hold= Muestra los resultados al final del bloque</p></li>
+</ul>
+<pre class="r"><code>{1/3 * 9^(1/3)}/2^3</code></pre>
+<pre><code>[1] 0.08667016</code></pre>
+<p>simbolos en un parrafo <span class="math inline">\(\frac{a}{b}\)</span> o si se quiere tamaño real <span class="math inline">\(\dfrac{a}{b}\)</span></p>
+<p>Para que los delimitadores adopten la altura de la expresion <span class="math inline">\((\dfrac{a}{b})\)</span> y <span class="math inline">\(\left(\dfrac{a}{b}\right)\)</span></p>
 <div id="matrices" class="section level1">
 <h1>Matrices</h1>
 <p><span class="math display">\[\begin{bmatrix} a_{11} &amp; a_{12} &amp; a_{13}\\a_{21} &amp; a_{22} &amp; a_{23}\\a_{31} &amp; a_{32} &amp; a_{33}\end {bmatrix}\]</span></p>
-<p>#Si la quiero rodear de un parentexis le coloco {pmatrix} si la quiero dividir con una barra con {vmatrix} si la quiero dividir con un corchete {bmatrix} si la quiero con llaves con {Bmatrix}</p>
+<p>Si la quiero rodear de un parentexis le coloco {pmatrix} si la quiero dividir con una barra con {vmatrix} si la quiero dividir con un corchete {bmatrix} si la quiero con llaves con {Bmatrix}</p>
 <p><span class="math display">\[\begin{Bmatrix} a_{11} &amp; a_{12} &amp; a_{13}\\a_{21} &amp; a_{22} &amp; a_{23}\\a_{31} &amp;a_{32} &amp; a_{33} \end {Bmatrix}\]</span> # nuestro propio chunks vamos a calcular <span class="math inline">\(\sqrt{2}-e^{-2}\)</span>:</p>
 <pre class="r"><code>sqrt(2)-exp(-2)</code></pre>
-</div>
-<div id="si-le-colamos-falso-no-muestra-el-mensaje-que-se-esta-cargando-la-libreria" class="section level1">
-<h1>Si le colamos falso no muestra el mensaje que se esta cargando la libreria</h1>
+<p>Si le colamos falso no muestra el mensaje que se esta cargando la libreria</p>
 <pre class="r"><code>library(magic)</code></pre>
 <pre><code>## Loading required package: abind</code></pre>
 <pre class="r"><code>magic(6)</code></pre>
