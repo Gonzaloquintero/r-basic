@@ -131,7 +131,31 @@ Se puede especificar que los delimitadores en este caso los parentecis se ajuste
 
 # Matrices
 
+Para realizar una matriz se procede de la siguiente manera  begin = empezar end =fin
 
+Cuando no se le coloca nada realiza la matrix sin encerrarla 
+
+$$\begin{matrix} a_{11} & a_{12} & a_{13} \\ b_{21} & b_{22} & b_{23}\\ c_{31} & c_{32} & c_{33} \end {matrix}$$
+Cuando ante de la expresion matrix se le coloca una p la encierra en corchetes
+
+$$\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ b_{21} & b_{22} & b_{23}\\ c_{31} & c_{32} & c_{33} \end {pmatrix}$$
+Cuando antes de la expresion matrix se le coloca una v la encierra en barras
+
+$$\begin{vmatrix} a_{11} & a_{12} & a_13 \\ b_{21} & b_{22} & b_{23} \\ c_{31} & c_{32} & c_{33} \end {vmatrix}$$
+Cuando antes de la expresion matrix se le coloca una b la encierra en un corchete
+
+$$\begin{bmatrix} a_{11} & a_{12} & a_{13} \\ b_{21} & b_{22} & b_{23} \\ c_{31} & c_{32} & c_{33} \end {bmatrix}$$
+Cuando antes de la expresion matrix se le coloca una B los encierra con llaves
+
+$$\begin{Bmatrix} a_{11} & a_{12} & a_{13} \\ b_{21} & b_{22} & b_{23} \\ c_{31} & c_{32} & c_{33} \end{Bmatrix}$$
+Cuando antes de la expresion matrix se le coloca la V los encierra en doble bara
+
+$$\begin{Vmatrix} a_{11} & a_{12} & a_{13} \\ b_{21} & b_{22} & b_{23} \\ c_{31} & c_{32} & c_{33} \end {Vmatrix}$$
+
+# Sistema de Ecuaciones 
+Cuando se quiere colocar un parentecis al cerrar o al derecha
+
+$$\left.\begin{array}{l} ax + by = c \\ ex-fy=g \end{array}\right\}$$ 
 
 
 
