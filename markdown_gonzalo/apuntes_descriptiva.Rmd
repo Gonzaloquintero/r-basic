@@ -5,6 +5,23 @@ date: "27/10/2020"
 output: html_document
 ---
 
+# Que es R
+
+Es un entorno de programacion para el analisis estadistico y grafico de datos. software libre 
+
+Rsudio es la interfaz  grafica de usuario de R  para todos los sistemas operativos
+
+Para instalar R se debe ir a la pagina oficial de http://cran.r-project.org/  de CRAN
+ Para instalarlo en ubuntu o debian  se debe dar el siguiente comando:
+ 
+ sudo aptitude  install r-base 
+ 
+ Enlace para optner RStudio http://www.rstudio.com/products/rstudio/download/
+ 
+ Para linux  se completa la instlacion con: sudo dpkg -i rstudio -<version> -i386.deb
+ donde version se refiere a la version concreta
+
+
 # Descargar e instalar paquetes
 
 - Para descargar un paquete con el siguiente comando entre parentecis y comillas el       nombre del paquete 
@@ -16,6 +33,90 @@ install.packages("nombre_Paquete",dependencies = TRUE)
 - Para cargar un paquete ya instalado
 
 library(nombre_paquete)
+
+# Calculadora Basica Operaciones
+
+
+Estos son los simbolos que se utilizan  para realizar las operaciones basicas
+
+- suma                        +
+- Resta                       -
+- Multiplicacion              *
+- Division                    /
+- Potencia                    ^
+- Cociente Entero             %/%
+- pi                          $pi$  
+- NaN                         Indeterminacion (Not a Number)  
+- NA                          Valor desconocido (not Available)
+- Raiz Cuadrada               sqrt()
+
+
+# Calculadora Basica Combinatoria
+
+```{r operaciones}
+factorial(4)
+choose(5,3)
+
+```
+
+- Numero Factorial : Multiplica el numero por los numeros menores hasta uno en R se    define como factorial()
+
+- Coeficiente Binomial: Es ordenar N elementos de M maneras, las combinaciones que se   pueden hacer para ordenarlos. Si tengo cinco platos y me puedo comer tres, buscar    las maneras de combinarlos  dada por la funcion choose 
+
+# Numeros con coma flotante
+
+Estas funciones son practicamente para el redondeo o aproximacion de numeros
+
+- print(x,n)  Muestra el n cifras significativas del numero x
+- round(x,n)  redondea a n cifras significativas un resultado o vector numerico de X
+- floor(x)    x, parte entera por defecto de x 
+- ceiling(x)  x, parte entera por exceso de x
+- trunc(x)    Parte entera de x eliminado la parte decimal
+
+R trabaja con diez y seis cifras decimales
+
+Ejemplo de la teoria anterior con la raiz cuadarada de 2
+
+```{r comaflotante}
+print(sqrt(2),10)
+print(sqrt(2),3)
+round(sqrt(2),3)
+floor(sqrt(2))
+ceiling(sqrt(2))
+trunc(sqrt(2))
+
+```
+
+# Numeros Complejos
+
+Se puede definir de las siguientes maneras
+
+z = 2 +3i    donde  parte real = 2  parte imaginaria o imaginary = -3
+ Tambien la podemos definir  
+ 
+z2= complex(real 0 2, imaginary = -3)
+
+Operaciones con numeros complejos
+
+- raiz cuadrada sqrt(as.complex(-x))        $\sqrt[2]{-x}$
+- Re(x)                                     Parte real de x
+- Im                                        Parte imaginaria de x
+- Mod(x)                                    Modulo de x
+- Arg(x)                                    Argumento de x
+_ Conj(x)                                   Conjunto de x
+
+
+
+# Formulas Matematicas
+
+Para tener ecuaciones o formulas en el mismo parrafo se utiliza el codigo a escribir entre el simbolo pesos sencillo $codigo$
+
+Si queremos el codigo o las formulas centradas en un parrafo aparte se escribe entre dos simbolos pesos $$codigo$$
+
+Vinculo donde se pueden encontrar todos los simbolos matematicos
+
+http://www.ptep-online.com/ctan/symbols.pdf
+
 
 # Operaciones Matematicas
 - Suma  para sumar en `R` se utiliza el operador $+$ para que quede de la siguiente     manera $2+2=$ `r 2+2`.
@@ -33,6 +134,11 @@ library(nombre_paquete)
 - Raiz n-ésima: funciona en `R` asi $\sqrt[3]{9}=$ `r 9^(1/3)`.
 
 - Fracccion: Para representar una fraccio en `R` $\frac{1}{3}=$ `r 1/3`.
+
+Ejercicio de una operacion con fraccionarios
+
+
+$\frac{\sqrt[3]{9}}{\frac{1}{3}}$
 
 - Simbolo mas menos en `R` para escribir mas o menos 2 $\pm 2$
 
@@ -157,8 +263,48 @@ Cuando se quiere colocar un parentecis al cerrar o al derecha
 
 $$\left.\begin{array}{l} ax + by = c \\ ex-fy=g \end{array}\right\}$$ 
 
+# Chuck Bloque de Codigo
+
+Los bloque de codigo de R dentro de un markdown se representan de la siguiente manerea
 
 
-```{r}
-2+2
+```{r chuckuno}
+x = 1+1
+x
 ```
+
+El sisguiente chuck es para calcular un precio de venta, teniendo encuenta el iva y el margen
+
+```{r preciovta, eval=TRUE, echo=TRUE, message=TRUE, warning=TRUE, results='markup'}
+costo= 10000
+iva= 0.19
+rentabilidad= 0.20
+base= costo *(1+iva)
+venta= base *(1+rentabilidad)
+venta
+```
+
+- echo = Para mostrar el codigo fuente con TRUE, muestra el codigo escrito
+
+- eval= Para ver el resultado evaluar el codigo con TRUE, muestra el resultado
+
+- message= Muestreas los mensajes del programa si cargo el codigo TRUE lo muestra
+
+- warning = Advertencia al ejecutar el codigo  TRUE muestra advertencias
+
+- results markup = Muestra resultados documento final linea a linea markup margen
+
+- results hide = No se muestra el resultado el documento final hide esconder
+
+- results asis = Devuelve linea a linea forma literar asis = como es
+
+- results hold= Muestra los resultados al final del bloque de codigo hold = sostener
+
+
+# Los Chuck en Modo Linea
+
+Para introducir un codigo dentro del mismo parrafo y que se ejecute al compilar el parrafo se hace de la siguiente manera:  `r sqrt(64)` Al eejcutar el documento solo se muestra el resultado 8. Si queremos que salga con el encabezado nos toca con latex se ejecutaria de la siguiente manera $\sqrt[2]{64}=$ `r sqrt(64)`
+
+Otro ejemplo raiz quinta de 64, quedaria de la siguiente manera  $\sqrt[5]{64}=$ `r 64^(1/5)`
+
+

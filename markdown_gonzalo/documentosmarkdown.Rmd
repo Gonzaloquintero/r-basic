@@ -1,0 +1,120 @@
+---
+title: "documentacion en texto"
+author: "gonzalo"
+date: "1/11/2020"
+output:
+  html_document:
+    df_print: paged
+---
+
+Cuando se tiene problemas para compliar un archivo pdf se puede encontrar ayuda en el siguinte enlace  https://yihui.org/tinytex/r/#deb
+
+# Titulo de Primer Nivel
+
+## Titulo de segundo Nivel
+
+### Titulo de Tercer Nivel
+
+#### Titulo Cuarto Nivel
+
+##### Titulo Quinto Nivel
+
+###### Titulo Sexto Nivel
+
+Se pueden escribir texto llano como este, para acompañar y dar aclaraciones tanto el codigo en  `R` como el texto en  $\LaTex$.  
+
+Para separar una linea de la otra se debe dejar doble espacio o dar doble enter
+
+## Letra Cursiva
+
+Para utilizar letra cursica  se  puede realizar de dos maneras la primera con los asteriscos de la siguiente manera *Este texto esta en cursiva* tambien se sacan con la bara baja ejemplo _Este texto tambien es en cursiva_
+
+## Letra en Negrita
+
+Para sacar letra en negrita se maneja el doble asteristo ej: **Este texto esta en negrita** o tambien con la doble linea baja por ejemplo: __Este texto tambien esta en negrita__
+
+## Los superindices
+
+Los super indices se sacan con el sombrerito ^  ejemplo  Este curso vale por mis notas^2^ al cuadrado  Gonzalo^el_mejor^
+
+## Para tachar una palabra
+
+Para tachcar una palabra se utiliza  la doble tilde ~~ el alt asterirsco ejemplo ~~No me gusta esta frase~~
+
+## Para colocar un link 
+ 
+Para realizar un link se coloca primero el nombre[ayuda latex](https://yihui.org/tinytex/r/#deb) yt la direccion en parentecis
+
+## Guion corto o Guion largo
+
+endash: -- y entonces Gonzalo dijo: ...
+
+emdash: ... === Como Gonzalo Queria explicar
+
+elipsis: ...  
+Cuando se deja algo sin explicar
+
+## Ecuaciones en Linea
+
+$s = \pi\cdot r^2$
+
+## Para insertar una imagen 
+
+Para insertar una imagen se comienza con un simbolo de exclamacion seguido de corchetes [] y luego la direccion de la imagen entre parentecis
+Con los dos puntos y la barra me devuelvo carpetas ..7 con tabulador y enter entro en las carpetas
+
+![](../../r-basic/teoria/Imgs/dado.png)
+
+## Linea Divispria en el documento
+
+Cuando se quiere colocar una linea se colocan tres asteriscos
+
+***
+Esto es una division en el documento
+
+## Para hacer una cita en bloque se utiliza el mayor que 
+
+> Esta es una cita en el bloque
+
+## Listas no ordenadas 
+
+Se separan con un asteristco las sublistas con + despues de un tabulador
+
+* Item primero
+* Item Segundo
+  + Subitem uno
+  + Subitem dos
+  + Subitem tres
+* Item Tercero
+
+## Listas Ordenadas
+
+En este caso los Subitem van con doble tabulador
+
+1. Primer Item
+2. Segundo Item
+    + Sub item 1
+    + sub item 2
+    + sub item 3
+1. tercer item
+1. Otro item
+2. Ultimo Item
+
+## Para Hacer un Cuadro manual
+
+El simbolo de barra lo encuentro en la primera tecla superior derecho con alt debajo del esc
+
+nombre alumno | Nota   |edad
+--------------|--------|-----
+Jose Gonzalo  | 9.8    | 49
+Hernan        | 7.5    | 47
+Sandra        | 6.6    | 36
+Antonio       | 4.2    | 50
+Alberto       |10.0    | 32
+
+
+
+
+
+
+

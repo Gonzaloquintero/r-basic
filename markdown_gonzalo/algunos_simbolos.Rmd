@@ -34,7 +34,7 @@ Hacemos el ejercicio anterior pero en `R`
 - results hold= Muestra los resultados al final del bloque
 
 
-```{r, ecuacion,echo=TRUE,eval=TRUE,results='markup',comment=NA}
+```{r ecuacion,echo=TRUE,eval=TRUE,results='markup',comment=NA}
 {1/3 * 9^(1/3)}/2^3
 
 ```
