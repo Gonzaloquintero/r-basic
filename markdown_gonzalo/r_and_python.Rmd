@@ -1,0 +1,138 @@
+---
+title: "randpython"
+author: "gonzalo quintero"
+date: "1/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Libreria Reticulate
+
+Sirve para compartir cosas de R y cosas de python 
+
+Se carga con $install.packages("reticulate")$
+
+se carga con $library("reticulate")$
+
+## Importar librerias de python 
+
+Para estos se importan las librerias de python y se guardan en variables de `R` ejemplo la libreria os del sistema operativo la importa y la guarda en la variable os
+
+Luego para acceder a cualquier funcion de python se realiza con os, por ejemplo para listar todas las librerias le doy listdir(".")
+
+Se debe colocar el simbolo de $ para poder trabajar las funciones python en R
+
+
+```{r}
+library(reticulate)
+use_python("/Users/galileo/anaconda3/bin/python3")
+#py_install("nombre del paquete a instalar")
+# Si falta alguna libreria
+os<-import("os")
+os$listdir(".")
+```
+
+Para cargar una libreria una funcion de python en R, inserto un chunck de R y le digo source que igual fuente barra baja python entre parentecis y comillas el nombre del archivo con la extension py, se debe buscar elarchivo ojala tenerlo en la misma carpeta
+
+
+```{r}
+source_python("add.py")
+add(3,4)
+
+```
+
+## Conversion de Objetos
+
+Con el siguiente ejercicio se importa la libreria numpy y le decimos que no la vamos a convertir que la trabajaremos de forma manual y nativa de python
+
+En  la siguiente importamos la libreria numpy de python y l aguardamos en np
+llamamos a np y generamos un array para generar una lista 
+
+Luego para convertir de objeto de puthon a r, realizamos lo siguiente:
+py_to_r(sum).  es pasar de py a r la variable sum. Con esto ya la muestra sin parentecis en el formato de r
+
+
+```{r}
+np<- import("numpy",convert = FALSE)
+x= np$array(c(1:4))
+sum= x$cumsum()
+print(sum)
+py_to_r(sum)
+
+```
+
+## Para invocar la ayuda 
+
+se realiza de la siguiente manera : Con esto vamos a buscar la yuda en python relacionado con chdir
+
+```{r}
+
+py_help(os$chdir)
+
+```
+
+## Arrays
+
+a<- np_array(c(1:10),dtype ="float16")
+a
+
+
+tambien se puede colocar que el objeto sea esto es para decirle que guarde en memoria de c, para obtimizar el calculo de muchos libros
+
+a<- np_array(c(1:10),dtype =order= C)
+a
+
+
+
+```{r}
+a<- np_array(c(1:10),order= "C")
+a
+
+```
+
+```{r}
+datos<- iris
+head(datos)
+# para pasar los datos de r a python para poderlos consultar desde python
+datos_py <- r_to_py(datos)
+
+```
+
+
+# Para hacer un chunck en python 
+
+Para esto se le da insertar y se le coloca que es en python
+
+```{python}
+import numpy as np
+
+
+```
+
+
+## Sparse Matrix 
+
+```{r}
+library(Matrix)
+N<-6
+set.seed(123)
+sparse_mat<-sparseMatrix(
+  i= sample(N,N,replace = F),
+  j= sample(N,N,replace = F),
+  x= runif(N),
+  dims = c(N,N)
+)
+sparse_mat
+sparse_mat_py <- r_to_py (sparse_mat)
+
+```
+
+```{python}
+
+```
+
+
+
