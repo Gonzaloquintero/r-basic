@@ -1,0 +1,256 @@
+---
+title: "tipos_de_datos"
+author: "gonzalo quintero"
+date: "5/11/2020"
+output: html_document
+---
+
+# Tipos de Datos.
+
+## Vector
+
+Es una secuencia ordenada de datos, debe estar compuesto por datos de un mismo tipo no se pueden convinar diferentes tipos de datos.
+
+### Tipos de Datos.
+
+logical:  logicos (TRUE O FALSE)
+Integer:  Numeros enteros Z
+numeric:  Numeros reales R
+complex:  Numeros Complejos C
+character: palabras
+
+Paraq definir un vector se utiliza la letra c de columnas  c()
+
+```{r vector}
+c(1,2,3,4,5)
+
+```
+Con scan() tambien se puede definir un vector para escanearlo por consola se realizara
+scan()
+1:2 5 7
+4:2 6
+6:9
+7:
+Lo anterior solo funciona por consola el numero uno, cautro, seis, siete lo da automaticamente
+
+
+fix()  Para modificar visualmente el vector x
+
+rep(a,n) Para definir un vector constante que contiene el dato a repetido n  veces
+
+```{r}
+rep("gonzalo",5)
+```
+Cuando se colocan datos de diferentes clase la hace de acuerdo a la jerarquia
+
+```{r}
+c(2,TRUE,2.5) # Convierte los valores a numeric o numeros reales
+c(4,10.65,"Gonzalo")# Convierte todos los valores en texto character
+x=c(1,2,3)
+fix(x)  # con el fix se abre un editor de texto desde este se puede editar los valores
+
+nombres=c("gonzalo", "Sandra", "Diego","Carlos")
+nombres
+fix(nombres)
+class(nombres)
+
+
+```
+### Ejercicios
+
+repetir mi año de nacimiento 10 veces
+
+```{r}
+rep(1971,10)
+rep(c(1,2,3,4,5),5)
+
+```
+Crear el vector vec que contenga 16,0,1,20,1,7,88,5,19 modificar la cuarta entrada con la funcion fix
+
+```{r}
+vec=c(16,0,1,20,1,7,88,5,19)
+fix(vec)
+vec
+
+```
+### Aclaracion
+
+para identificar un numero decimal se realiza con el punto(.) cuando se quiere cambiar por otro se utiliza la siguiente funcion:
+scan(dec= ",")  este seria para cambiar por la coma (,)
+
+Cuando tengo otro tipo de datos y lo quiereo converir a character se utiliza la siquiente
+
+scan(what="character")
+gonzalo sandra diego
+
+Con esto el lo convierte automaticamente a character
+
+
+## Progresiones y secuencias Matematicas
+
+Vamos a realizar una secuenvia que comience en 5 termine el 60 y en saltos de 5
+by= saltos quedaria de la siguiente manera
+
+```{r}
+seq(5,60,by=5)   # Se realizo con saltos o intervalos de 5
+seq(5,60,by=2.5) # Eta se realizo con saltos o intervalos de 2.5
+
+```
+Si el ultimo numero no es divisible por el intervalo coloca el ultimo numero divisible por el rango 
+
+## Progresiones Negativas
+
+Se realizan de la siguiente manera
+
+```{r}
+seq(100,0,by=-10)
+
+```
+Otro tipo de progracion que se puede realizar es hacer una secuencia que comience en un numero termine en otro, con cierto numero de elementos
+ejemplo: secuencia de 4 a 35 con  7 elementos. para este caso se utiliza length.out que traduce a fuera desde 
+```{r}
+seq(4,35,length.out = 7)
+
+```
+Tambien le puedo decir, el numero en el que comienza el numero  de elementos que lo contendra y la secuencia o los saltos
+
+```{r}
+seq(4,length.out =7,by=3)
+
+```
+Tambien se pueden hacerprogrersiones aritmeticas con los dos puntos ejemplo una progresion del 1 al 10, la puedo generar de la siguiente manera:
+```{r}
+1:10
+30:-6
+-2:5   # Muestra los numeros desde -2 hasta el numero 5
+-(2:5)  # Muestra solo los numeros negativos desde -2 hasta -5
+```
+## Ejercicios en clase
+
+Realizar una secuencia del 1 al 20
+
+```{r}
+seq(1,20,by=1)
+1:20
+
+```
+Imprimir los primeros 20, numeros pares
+
+```{r}
+seq(0, length.out = 20,by=2)
+
+```
+
+Imprimir 30, numeros equidistantes  entre el 17 y el 98, mostrando solo cuatro cifras significativos
+
+```{r}
+round(seq (17,98,length.out = 30),4)
+
+```
+Estas secuencias se pueden trabajar tambien con vectores concatenando estos ejercicios ejemplo:
+
+Repetir cinco veces pi  luego colocar una secuencia de 5 a 10  y por ultimo -7
+
+
+```{r}
+c(rep(pi,5),5:10,-7)
+
+c(rep(10,5),5:10,seq(10,20,by=2))->g
+
+c(g,rep(5,3),3:8) # El anterior se guardo en una variable llamada g y lo volvi a concatenar
+
+```
+## Funciones Y ordenes de Vectores
+
+```{r}
+x= 1:10
+x
+x+pi  # Lo que hace es sumarle pi a cada entrada  del vector
+x*pi  # tambien se puede multiplicar
+sqrt(x) # Con esto le saca la raiz cuadrada a cada uno de las entradas del vector
+2^x  # Elevamos dos a cada uno de las entradas del vector
+x^2 # Para elevar cada elemento del vector al cuadrado
+# Se puede utilizar como funcion utilizando la funcion sapply
+sapply(x,FUN =function(elemento){sqrt(elemento)}) # Genera la raiz cuadarada como el siaugiente casa
+sqrt(x)
+
+```
+Puedo sumar dos vectores de la siguiente manera:
+
+```{r}
+1:10 + 1:10  # Suma la primera entrada del primer vector con la primera entrada del segundo vector
+
+(1:10)*(1:10)  # Multiplica la primera entrada del primer vector con la primera entrada del segundo vector
+
+(1:10)^(1:10)  # Es la potencia de un vector sobre otro 
+
+```
+Cuando se tiene una secuencia y se convina con una funcion 
+
+```{r}
+n= 1:100  # Corresponde a los 100, primeros terminos
+x=2*3^(n/2)-15  #  se utiliza la secuencia para aplicarle esta funcion
+x
+y= n^2/(n^2+1) # vuelve utilizar a n con la funcion Y para encontrar un limite
+y
+
+```
+
+##  Funciones  Calculos Estadisticos
+
+Dado un vector de datos X podemos calcular muchas medidas estadisticas
+
+- length(x)  Calcula la longitud del vector
+- max(x): Calcula el maximo del vector X
+- min(x): Calcula en minimo del vector x 
+- prod(x): calcula el producto de las entradas del vector x
+- mean(x): Calcula la media aritmetica
+- diff(x): Calcula el vector formado, por las diferencias sucesivas entre entradas     del vector  original x
+- cumsum(x): Calcula el vector formado por las sumas  acumuladas  de las entradas del   vector original x
+  - Permite definir sucesiones descritas mediante sumatorios
+  - Cada entrada de camsum(x) es la suma de las entradas de x hasta su posicion
+  
+  
+  - sort(x): Ordena en orden natural 
+  - rev(x): Invierte el orden de los elementos del vectos x 
+  
+```{r}
+# Para coger cada entrada del vector v y elevarlo al cuadrado
+cuadrado=function(x){x^2}
+v=c(1,2,3,4,5,6)
+sapply(v, FUN = cuadrado)
+mean(v)  # para sacar la media
+cumsum(v) # la suma del primero luego ir acumulando cada elemento sumas acumuladas
+sort(v)  # Oedena las entradas del vector v en orden ascendente
+rev(v)  # Invierte el orden de los elementos del vector 
+length(v)  # Con esto savemos la longitude del vector o el numero de elementos que              tiene para este caso 6
+max(v) # Para saber cual es el valor mayor
+min(v) # Para saber cual es el valor menor
+sum(v) # La suma de todos los elementos
+prod(v) # Es el resultado del producto de todos los miembros 
+mean(v)  # Es la media de los elementos del vector
+sum(v)/length(v) # Con esto obtenemos la media la suma de los elementos dividido en el numero de elementos del vector
+cummax(v)  # Se queda con el mas grande
+cummin(v)  # se queda con el numero menor
+cumprod(v) # Hace los productos acumulados
+diff(v) # Hace las restas en este caso como son secuencia de uno en uno el resultado           es uno para todos los casos 
+diff(cumsum(v)) # Son las diferencias de las sumas acumuladas
+sort(v,decreasing = TRUE)  # para invertir el orden de sort queda desendente
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
