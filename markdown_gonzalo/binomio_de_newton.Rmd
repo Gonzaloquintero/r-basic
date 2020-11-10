@@ -1,0 +1,40 @@
+---
+title: "binomio de newton"
+author: "gonzalo"
+date: "10/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Producto notable
+
+$$(a+b)^2= a^2+2ab+b^2$$
+## Funcion para calcular el producto notable de dos numeros en R
+
+
+```{r}
+productonotable= function(a,b){
+  a^2+2*a*b+b^2
+}
+
+productonotable(2,1)
+productonotable(1,2)
+
+```
+## Binomio de Newton
+
+$$(a+b)^n=\sum_{k=0}^n {n\choose k}\cdot a^{n-k}\cdot b^k $$ 
+
+## Funcion en R del binommio de newton
+
+```{r}
+
+
+```
+
+
+
+

@@ -221,7 +221,7 @@ v=c(1,2,3,4,5,6)
 sapply(v, FUN = cuadrado)
 mean(v)  # para sacar la media
 cumsum(v) # la suma del primero luego ir acumulando cada elemento sumas acumuladas
-sort(v)  # Oedena las entradas del vector v en orden ascendente
+sort(v)  # Ordena las entradas del vector v en orden ascendente
 rev(v)  # Invierte el orden de los elementos del vector 
 length(v)  # Con esto savemos la longitude del vector o el numero de elementos que              tiene para este caso 6
 max(v) # Para saber cual es el valor mayor
