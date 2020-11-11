@@ -380,6 +380,20 @@ productonotable(2,1)</code></pre>
 <pre><code>## [1] 9</code></pre>
 <pre class="r"><code>productonotable(1,2)</code></pre>
 <pre><code>## [1] 9</code></pre>
+<div id="binomio-de-newton" class="section level2">
+<h2>Binomio de Newton</h2>
+<p><span class="math display">\[(a+b)^n=\sum_{k=0}^n {n\choose k}\cdot a^{n-k}\cdot b^k) = {n\choose 0}* a^n*b^0+ \cdots {n\choose n} *a^0*b^n \]</span></p>
+</div>
+<div id="funcion-en-r-del-binommio-de-newton" class="section level2">
+<h2>Funcion en R del binommio de newton</h2>
+<pre class="r"><code>binomionewton= function(a,b,n){
+cumsum(choose(n,(0:n))*a^{n-(0:n)}*b^(0:n))[n+1]
+
+}
+
+binomionewton(2,1,2)</code></pre>
+<pre><code>## [1] 9</code></pre>
+</div>
 
 
 

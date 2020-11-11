@@ -239,6 +239,35 @@ sort(v,decreasing = TRUE)  # para invertir el orden de sort queda desendente
 
 ```
 
+## Subvectores y Filtros
+
+- vector[i]  Da la i-esisma entrada del vector, es decir trar el numero del       vector que se coloque en las llaves
+
+- Los indices del vector comienzan en 1
+
+- Vector[a:b] si a y b son numeros naturales, nos da el subvector  con las        entradas del vector original que van de la posicion a-esima hasta l b-esima
+
+- vector [-i] Si i es un numero, este subvector esta formado por todas las        entradas del vector original menos la entreda i-esima, si i resulta ser un      vector,entonces es un vector de indices y crea un nuevo vector con las          entradas del vector original, cutyos indices pertenecen a i. Muestra todos      menos el vector del indice i
+
+- vector [-x] si es x es un vector de (indices), entonces este es el complemento   de vector x 
+
+### TAnbien podemos utilizar operadores logicos 
+
+- ==:=        igual a   
+- != #        diferente
+- >=:         mayor igual que
+- <=:         menor igua que
+- >:          mayor que
+- <           menor que
+- !:          no logico
+- &:          Y logico
+- |           O logico
+
+
+
+
+
+
 
 
 
