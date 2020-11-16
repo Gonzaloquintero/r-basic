@@ -251,7 +251,7 @@ sort(v,decreasing = TRUE)  # para invertir el orden de sort queda desendente
 
 - vector [-x] si es x es un vector de (indices), entonces este es el complemento   de vector x 
 
-### TAnbien podemos utilizar operadores logicos 
+### Tambien podemos utilizar operadores logicos 
 
 - ==:=        igual a   
 - != #        diferente
@@ -261,7 +261,153 @@ sort(v,decreasing = TRUE)  # para invertir el orden de sort queda desendente
 - <           menor que
 - !:          no logico
 - &:          Y logico
-- |           O logico
+- |:           O logico
+
+
+### jercicios
+
+```{r}
+g= c(15,5,6,19,32,0,9)
+g[2] # Esto nos devuelve la entrada numero dos del vector en este caso el numero 5
+g[2:5] # Muestra los elementos del vector que estan dentro de la posicion 2 a la 5
+g[-2] # Muestra todos los vectores execto el que es esta mostrando en este caso el de       la posicion dos que es el numero cinco
+g[-c(3,5)]  # En este caso no muestra la entrada 3 y la entrada 5
+g[g!=19 & g>15]  # muesta un nuevo vector donde no se incluye el numero 19, y los                      numeros mayores que 15, solo quedaria el numero 19
+
+```
+
+## Condiciones con Which
+
+- which(x cumple condicion): Para obtener los indices de las entradas del vector x     que satisface la condicion dada 
+
+- which.min(x): Nos da la primera posicion  en la que el vector x  toma su valor       minimo.
+
+- which(x==min(x)): da todas las posiciones en las que el vector x toma sus valores    minimos
+
+- which.max(x): Nos da la primera posicion en la que el vector x toma su     valor     maximo.
+
+- which (x==max(x)): Da todas las posiciones en las que el vector x toma sus valores   maximos
+
+
+### Ejemplos y ejercicios de Subvectores
+
+```{r}
+x= seq(3,50,by=3.5)
+x
+x[3]  # Para mostrar la entrada numero tres del vector
+x[length(x)] # Para mostrar la ultima entrada del vector
+x[length(x)-1] # Para sacar la penultima entrada del vector
+x[length(x)-2] # Para mostrar la antepenultima 
+x[-3]  # No me muestra el vector que esta en la posicion tres
+x[4:8]  # me muestra un nuevo vector con las entradas del 4 al 8 del vector
+x[8:4] # muestra primero el vector de la posicion ocho  luego el de la siete hasta llegar a la posicion 4
+x[seq(2,length(x),by= 2)] # esto me da las entradas que estan en posicion par
+x[seq(1,length(x),by= 2)] # Con esto se tendrian los impares, si se comienza desde                             uno
+x[-seq(2,length(x),by= 2)] # Esto quita las entradas de posicion par, deja solo las                               impares, seria otra forma de sacar las impares
+x[(length(x)-3):length(x)] # Me da las ultimas cuatro entradas
+x[c(1,5,6)]  # Me filtra los que estan en la posicion 1,5,6
+x[x>30]  # Me muestra las entradas que son mayores que 30
+x[x>20 & x<40]  # con and para que se cumplan dos condiciones
+x[x!=3 & x!=17] # Nos da las entradas diferenes de 3 y diferentes de 17
+x[x<10 | x>40]  # este es el operador or o o numeros menores que 10 o los mayores que                 cuarenta
+x[x>=10] # Estos son los mayores que 10, incluido el mismo 10
+x[x%%2==0] # Para que me de los elementos del vector que son pares
+x[x%%2==1] # Para sacar los numero impares
+x>30 # me devuelve si cada vector cumple la condicion y me dice si es falso o verdaro     TRUE o FALSE
+x[x>30]
+which(x>4) # Esto me da los numeros mayores que cuatro pero me da es la posicion en            la que se encuentra
+x[which(x>4)]  # Este si me da los elementos,el otro me da la ubicacion de los                     elementos
+which(x>20 & x<30)  # Nos da la posicion de los numeros mayores qye 20 y menores ques                     30
+which.min(x)  # Me da la posicion donde esta el elmento mas pequeño
+which(x==min(x))  # Si el mismo elemento esta en mas de una posicion me da la                          posiciones en las que se encuentre
+which.max(x)  # Me da la posicion donde esta el numero mas grande
+
+x[x>48.5]  # Como no se cumple la condicion me da el tipo de datos que tiene la                 variable para este caso numeric,diciendo que el vector esta vacio
+z=c() # Define que z es un vector NULL que esta vacio
+z
+
+
+
+
+
+
+```
+## Valores NA
+
+para  trabajar con vectores con NA se debe utilizar (na.rm= TRUE) quita los NA, al momento de hacer los calculos
+
+na.rm No funciona con cumsum
+
+Para borrar los valor NA se utiliza na.omit
+attr = atributos
+
+```{r}
+x=1:10
+x
+x[3]
+x[3]= 32 # Con esto me le asigna el valor 32 a la tercera posicion
+x
+x[11]  # Nos da valor no disponible
+x[11] = 15  # Le asigna valor a la posicion 11. agrego una entrada mas al vector
+x
+x[2:5]=x[2:5]+3 # Le suma 3 a cada entrada del vector de la posicion del 2 al 5
+x
+# Puedo cambiar las ultima tres posiciones incluso por cero "0"
+x[(length(x)-2):length(x)]=0
+x
+# Cuando le digo que le coloque cinco posiciones mas de x el numero nueve las cuatro restante las deja como NA
+x[length(x)+5]= 9
+x
+# Estos NA, son un problema por ejemplo si quiero hacer una operacio, el resultado es igual un NA
+sum(x)
+prod(x)
+(x) *2
+cumsum(x)  # suma acumulada
+mean(x)  # De esta manera no se puede calcular
+## Para hacer calculos con vectores que tengan NA se hace lo siguiente  (na.rm= TRUE)
+sum(x,na.rm = TRUE)
+##para sacar la media quedaria de la siguiente manera
+mean(x,na.rm=TRUE)
+# Para saber las posiciones donde hay NA se utiliza la funcion is.na me dice cuales son NA y cuales no por medio de valores voleanos
+is.na(x)
+# Con which combinado con is.na  si me dice la posicion donde estan los valores NA
+which(is.na(x))
+
+## Cuando se trabaja en estadistica lo normas es reemplazarlos por la media
+# creamos una copia de la variable la llamamos z
+z=x
+z[is.na(z)]
+#reemplazamos los valores NA de z por la media de ella misma 
+z[is.na(z)]=mean(z,na.rm=TRUE)
+z
+# Otra forma es filtrar los numeros que no son NA para este casp utilizo nuevamente x
+z[!is.na(x)]
+
+# Para realizar un cumsum se utiliza diciendole que las difernetes a na
+cumsum(x[!is.na(x)])
+
+# Para eliminar los valores NA, se utiliza na.omit
+# Para hacer las sumas sin tener encuenta los elmentos NA
+
+sum(na.omit(x))
+
+## Para eliminar los elementos NA sin los atributos utilizo x_clean
+
+q=c(1,2,3,NA,NA,NA,5,6)
+q
+na.omit(q)
+q
+q_clean=na.omit(q)  # Este vector queda limpio de NA
+q_clean
+
+```
+# Factores
+
+
+
+
+
+
 
 
 
