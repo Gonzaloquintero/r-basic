@@ -403,6 +403,28 @@ q_clean
 ```
 # Factores
 
+Es como un vector con una extructura interna  mas rica que permite usarlo para clasificar observaciones 
+
+. levels: Atributo del factor. Cada elemento del factor es igual a un nivel, los       niveles clasifican las entradas del factor. Se ordenan por orden alfabetico 
+
+. Para definir un factor, primero hemos de definir un vector y transformarlo por       medio de las funciones 
+    . factor()  
+    . as.factor()
+    
+Es para identificar algo con una etiqueta
+    
+```{r}
+# creamos un vector de nombres 
+nombres=c("Juan","Antonio","Ricardo","Juan","Juan","Maria","Maria")
+nombres
+# El vector lo covertimos en un factor que lo llamaremos nombres.factor
+
+nombres.factor=factor(nombres)
+nombres.factor
+
+```
+
+    
 
 
 
