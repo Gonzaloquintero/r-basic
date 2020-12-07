@@ -43,7 +43,7 @@ Para tachcar una palabra se utiliza  la doble tilde ~~ el alt asterirsco ejemplo
 
 ## Para colocar un link 
  
-Para realizar un link se coloca primero el nombre[ayuda latex](https://yihui.org/tinytex/r/#deb) yt la direccion en parentecis
+Para realizar un link se coloca primero el nombre[ayuda latex](https://yihui.org/tinytex/r/#deb) y la direccion en parentecis
 
 ## Guion corto o Guion largo
 
@@ -65,7 +65,7 @@ Con los dos puntos y la barra me devuelvo carpetas ..7 con tabulador y enter ent
 
 ![](../../r-basic/teoria/Imgs/dado.png)
 
-## Linea Divispria en el documento
+## Linea Divisoria en el documento
 
 Cuando se quiere colocar una linea se colocan tres asteriscos
 
