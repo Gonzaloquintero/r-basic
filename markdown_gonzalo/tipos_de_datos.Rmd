@@ -403,6 +403,88 @@ q_clean
 ```
 # Factores
 
+Es como un vector con una extructura interna  mas rica que permite usarlo para clasificar observaciones 
+
+. levels: Atributo del factor. Cada elemento del factor es igual a un nivel, los       niveles clasifican las entradas del factor. Se ordenan por orden alfabetico 
+
+. Para definir un factor, primero hemos de definir un vector y transformarlo por       medio de las funciones 
+    . factor()  
+    . as.factor()
+    
+Es para identificar algo con una etiqueta
+    
+```{r}
+# creamos un vector de nombres 
+nombres=c("Juan","Antonio","Ricardo","Juan","Juan","Maria","Maria")
+nombres
+# El vector lo covertimos en un factor que lo llamaremos nombres.factor
+
+nombres.factor=factor(nombres)
+nombres.factor
+
+```
+labels: Permite cambiar el nombre de los niveles
+levels(factor): Para obtener los niveles del factor
+
+## Factor ordenado
+
+Es un factor donde los niveles siguen un orden
+
+ordered(vector,levels= ...) Funcion que define un factor ordenado y tiene los mismos parametros  que factor 
+
+```{r}
+# Reamos un vector con el genero o sexo de las personas, donde M= Mujer, H= Hombre
+genero= c("M","H","H", "M","M","M","H","H")
+# Ahora lo volvemos un factor
+
+genero.factor=factor(genero)
+genero.factor
+
+# Si quiero agregar un nuevo nivel en el caso de los sexos bisexual identificado con B, realizaria lo siguiente:
+
+genero.factor3= factor(genero,levels = c("M","H","B"))
+genero.factor3
+
+# Como se puede observar ya tiene los tres niveles con el nuevo nivel que se agrego
+
+# Ahora cambiamos el nombre de los niveles para que queden de forma mas clara, donde podamos identificar, mujeres, hombres y bisexuales 
+
+genero.factor4=factor(genero,levels= c("M","H","B"),labels=c("Mujer","Hombre","Bisexual"))
+genero.factor4
+# Para que me muestre los niveles de un factor, para el ejemplo me muestra los niveles del factor genero4
+levels(genero.factor4)
+# Con levels tambien puedo cambiar directamente lo niveles o nombre de los niveles 
+levels(genero.factor4)= c("Femenino","Masculino","Bisexo")
+levels(genero.factor4)
+genero.factor4
+
+# Vamos hacer un ejercicio aplicando el mismo conocimiento pero con notas de estudiantes.
+notas=c(1,4,3,2,3,2,4,3,1,2,3,4,2,3,4)
+notas.factor=factor(notas)
+notas.factor
+# Para consultar los niveles de notas.factor
+# con level tambien cambiamos los nombre de los niveles de la siguiente manera:
+# 1 por "perdio"
+# 2 por "Aprobo"
+# 3 por "Sobrealiente"
+# 4 por "excelente"
+levels(notas.factor)= c("Perdio","Aprobo","Sobresaliente","Excelente")
+notas.factor
+# Para cambiar que 1 es perdio y el resto aprobaron, es decir solo quedan dos niveles 
+levels(notas.factor)= c("perdio","Aprobo","Aprobo","aprobo")
+notas.factor
+
+# Para Ordenar los factores 
+notas
+ordered(notas, labels=c("Perdio","Aprobo","Sobresaliente","Excelente"))
+
+
+
+```
+
+
+
+    
 
 
 
