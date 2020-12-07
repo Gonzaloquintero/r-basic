@@ -482,6 +482,20 @@ ordered(notas, labels=c("Perdio","Aprobo","Sobresaliente","Excelente"))
 
 ```
 
+# Listas
+
+Es una lista formada por diferentes objetos, no necesariamente del mismo tipo, cada cual con un nombre interno 
+
+list(....)  Funcion que crea una lista 
+
+```{r}
+x= c(1,5,-2,6,-7,8,-3,4,-9)
+x
+L=list(nombre="temperatura",datos=x,media=mean(x),sumas=cumsum(x))
+L
+
+
+```
 
 
     
