@@ -493,9 +493,31 @@ x= c(1,5,-2,6,-7,8,-3,4,-9)
 x
 L=list(nombre="temperatura",datos=x,media=mean(x),sumas=cumsum(x))
 L
+# Si quiero acceder a un componente de la lista, debo llamar a la lista por que por si solo no existen, lo hago con el nombre de la lista y el simbolo $, donde automaticamente me muestra los componentes de la lista.
 
+# Para el siguiente ejemplo nos muestra  de la lista L la inforamcion que tenemos en el componente datos
+
+L$datos
+
+# Con la ubicacion entre doble corchete tambien accedo, en este caso la posicion tres que corresponde a la media, el doble corchete es para poder operar con este, cuando es un solo corchete, lo relaciona como una lista
+L[[3]]
 
 ```
+## Para obtener informacion de una lista
+
+str(list):  Para conocer la extructura interna de una lista
+names(list): Para saber los nombres de las listas
+
+```{r}
+names(L)
+str(L)
+
+```
+# Matrices
+
+
+
+
 
 
     
