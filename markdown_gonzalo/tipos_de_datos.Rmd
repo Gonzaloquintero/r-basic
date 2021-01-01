@@ -515,6 +515,136 @@ str(L)
 ```
 # Matrices
 
+matrix(vector,nrow,byrow= valor_logico): Para definir unamatrix de n filas formadas por las entradas del vector
+
+nrow= numero de filas 
+byrow= Si es True la matriz se construye por filas si es FALSE por defecto se construye por columnas 
+ncol= numero de columnas (Se usa en lugar de nrow)
+
+Se muestras las filas como (i)
+las columnas como (j)
+
+```{r}
+# Para definir una matrix con los numeros de 1 a 12 con 4 numero de filas se realiza lo siguiente
+# Con lo anterior separte los doce numeros en cuatro filas y tres columnas 
+
+M= matrix(1:12,nrow = 4)
+M
+# con el siguiente ejemplo organiza la matrix en columnas organiza los numeros segun las filas no las columnas 
+M1= matrix(1:12,nrow = 4,byrow = TRUE)
+M1
+
+# Con esta matrix manejamos solo tres filas lo que da automaticamente 4, columnas aunque se ordena por columnas 
+M2= matrix(1:12,nrow = 3)
+M2
+
+# Como el numero de filas no es multiplo del numero de elementos de la columna R da una abvertencia y completa la matrix repitiendo los numeros en orden ascendente 
+M3= matrix(1:12,nrow = 5)
+M3
+
+# Para crear una matriz de 4 filas y seis columnas solo con el numero 1, en este caso es necesario darle el numero de filas y columnas
+
+M4= matrix(1,nrow = 4,ncol = 6)
+M4
+
+# Se propone realizar una matriz con 3 filas 5 columnas y el valor cero
+
+M5= matrix(0,nrow = 3,ncol = 5)
+M5
+
+# para agregar  filas a una matrix, para ello utilizo el comando rbind para este ejercicio lo hago con M3, esto le agrega tres columnas a M3
+
+rbind(M3,c(1,2,3),c(-1,-2,-3))
+
+# tambien puedo utilizar a rbind para crear una matriz directamente con esto crea una matrix de dos columnas
+M6=rbind(c(1,2,3),c(-1,-2,-3))
+M6
+
+# con cbind me la crea con dos columnas 
+M7=cbind(c(1,2,3),c(-1,-2,-3))
+M7
+
+# PARA CONSTRUIR UNA MATRIX DIAGONAL 
+# para crear una matrix donde la diagonal sean los numeros 1,2,3,4
+
+M8=diag(c(1,2,3,4))
+M8
+
+M9=diag(5,nrow = 3)
+M9
+
+# SUBMATRICES
+
+# Es la forma de obtener filas o columnas de una matriz donde i son las filas y j las columnas para llamarlas va entre corchetes 
+
+M3
+M3[2,3]
+# Esto nos devuelve el numero que esta en la fila 2 en la columna 3
+M3[2,]  # Me muestra toda la fila  dos 
+M3[,3]  # Devuelve los valores de la columa tres 
+
+# Para calcular la diagonal de una matriz seria de lasiguiente manera
+
+diag(M3)
+nrow(M3)  # Para saber el numero de filas de M3
+ncol(M3)  # Para saber el numero de columnas de M3
+dim(M3)   # Nos da la dimension de la matriz m3
+sum(M3)  # Devuelve la sumatoria de toda la matriz
+prod(M3) # devuelve el producto de la matriz
+mean(M3) # Devuelve la media de la matriz 
+colSums(M3) # Devuelve la suma por columnas de la matriz
+rowSums(M3)  # Devuelve la suma por filas de la matriz
+colMeans(M3) # Devuelve la media por columnas de la matriz
+rowMeans(M3)  # Devuelve la media por filas de la matriz
+
+```
+# Algebra Lineal
+
+Funcion apply()
+
+```{r}
+
+# Con la funcion apply puedo hacer el cuadrado de la matriz
+# La misma matriz A creado de la siguiente manera
+
+A= matrix(c(1,2,3,4,5,6,7,8,9),ncol = 3)
+A
+dim(A)  # Para sacar las dimensiones de A, sera de 3 filas por 3 columnas 3 3
+
+diag(A)
+
+# apply(matriz,MARGIN= ...,FUN= funcion): Para aplicar otras funciones a las filas o las columnas de una matriz
+# MARGIN =1, Aplica la funcion por filas = 2 la aplica por columnas o c(1,2), si queremos aplicar a cada entrada 
+
+# con la siguiente funcion aplicamos el cuadrado a cada elemento de la matriz
+apply(A, MARGIN = c(1,2),FUN = cuadrado)
+
+# Para sumar las filas de la matriz
+apply(A,MARGIN = 1,FUN = sum)
+
+# Para sumar las columnas de la matriz
+apply(A,MARGIN = 2,FUN = sum)
+
+# Operaciones
+# t(matrix)   para obtener la transpuesta de la matriz es decir cambiar las filas por las columnas
+t(A)
+# +(matrix)= Se suman las matrices
+# *  Para el producto de un escalar por una matrix 
+# % * %  Para multiplicar matrices ejemplo a por su transpuesta
+
+A %*% t(A)
+#mtx.exp(matrix,n): Para elevar la matriz a n, se hace con el paquete biodem 
+# det(matrix): Para calcular el determinte de una matriz 
+# qr(matrix): $ rank para calcular el tango de la matriz 
+qr(A) # Devuelve una lista, el rango de la matriz 
+#solve(matrix): Para calcular la invera de una matriz invertible 
+# solve(matrix,b) resuleve sistemas de ecuaciones lineales, donde  b es el vector de terminos independientes 
+
+
+
+
+```
+
 
 
 
